@@ -1,0 +1,88 @@
+/* BILLING FORM */
+.billing-form {
+  width: 100%;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+/* TITLE */
+.billing-form h3 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.sub-text {
+  color: #777;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* FORM GRID */
+.billing-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUTS + SELECT */
+.billing-form select,
+.billing-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* FOCUS EFFECT */
+.billing-form select:focus,
+.billing-form input:focus {
+  border-color: #4f7df9;
+  box-shadow: 0 0 4px rgba(79, 125, 249, 0.3);
+}
+
+/* BUTTON */
+.billing-form button {
+  width: 100%;
+  padding: 12px;
+  background: #4f7df9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.billing-form button:hover {
+  background: #3b63d1;
+}
+
+/* MESSAGE BOX */
+.message-box {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* SUCCESS */
+.message-box.success {
+  background: #e6ffed;
+  color: #1a7f37;
+}
+
+/* ERROR */
+.message-box.error {
+  background: #ffe5e5;
+  color: #d9363e;
+}

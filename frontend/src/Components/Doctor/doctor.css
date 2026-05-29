@@ -1,0 +1,132 @@
+/* BACKGROUND SAME */
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(213, 26%, 93%);
+  position: relative;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6ea8ff, #c9e4ff);
+}
+
+/* CARD */
+.card {
+  position: relative;
+  z-index: 1;
+  width: 420px;
+  padding: 25px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.card h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.sub-text {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* GRID (IMPORTANT FOR CLEAN LOOK) */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* INPUT + SELECT */
+.form-grid input,
+.form-grid select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  font-size: 13px;
+  background: #fafafa;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  outline: none;
+  border-color: #6ea8ff;
+  background: #fff;
+}
+
+/* TEXTAREA */
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  font-size: 13px;
+  background: #fafafa;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #6ea8ff;
+  background: #fff;
+}
+
+/* BUTTON */
+.submit-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 11px;
+  border-radius: 8px;
+  border: none;
+  background: #5f8cff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: #4a74e0;
+}
+.error-box {
+  background: #ffeaea;
+  color: #d90429;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  border: 1px solid #ffcaca;
+  text-align: center;
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: #eef2f7;
+}
+
+/* form wrapper */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* center but inside panel */
+}
+
+/* form card */
+.form-card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+}

@@ -1,0 +1,23 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.submenu p {
+  cursor: pointer;
+  padding: 8px 15px;
+}
+
+.submenu p:hover {
+  background-color: #f0f0f0;
+}
+
+.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.logout {
+  color: red;
+}

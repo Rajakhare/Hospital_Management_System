@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* OUTER WRAPPER */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9edf2;
+}
+
+/* INNER GRADIENT BOX (like your image) */
+.login-container::before {
+  content: "";
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6ea8ff, #c9e4ff);
+  z-index: 0;
+}
+
+/* CARD */
+.login-form {
+  position: relative;
+  z-index: 1;
+  width: 360px;
+  padding: 28px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.login-form h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.sub-text {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* LABEL */
+.login-form label {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* INPUT */
+.login-form input {
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+  margin-bottom: 14px;
+  font-size: 13px;
+  background: #fafafa;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #6ea8ff;
+  background: #fff;
+}
+
+/* PASSWORD */
+.password-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-box span {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #777;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  border: none;
+  background: #5f8cff;
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-btn:hover {
+  background: #4a74e0;
+}
+
+
+/* REGISTER */
+.register {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.register p {
+  font-size: 12px;
+  color: #777;
+}
+
+/* REGISTER BUTTONS (SUBTLE, not loud) */
+.register-buttons{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.register-buttons a {
+  flex: 1;
+  padding: 9px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background: #f7f7f7;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.register-buttons a:hover {
+  background: #eef4ff;
+  border-color: #5f8cff;
+}
+
+.patient {
+    text-decoration: none;
+    color: black;
+}
+
+.error-box {
+  background: #ffeaea;
+  color: #d90429;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  border: 1px solid #ffcaca;
+  text-align: center;
+}
+

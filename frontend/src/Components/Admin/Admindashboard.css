@@ -1,0 +1,165 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN WRAPPER */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.admin-sidebar {
+  width: 250px;
+  background: #4f8cff;
+  color: white;
+
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+}
+
+/* RIGHT SIDE */
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.admin-navbar {
+  height: 60px;
+  width: 100%;
+  background: white;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* CONTENT */
+.admin-content {
+  flex: 1;
+
+  background: #eaf1fb;
+
+  padding: 20px;
+
+  overflow-y: auto;
+}
+
+/* DASHBOARD */
+.dashboard-container {
+  width: 100%;
+}
+
+/* TITLE */
+.dashboard-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* CARDS */
+.dashboard-cards {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+/* SINGLE CARD */
+.dashboard-card {
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+}
+
+.dashboard-card p {
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.dashboard-card h1 {
+  color: #333;
+}
+
+.dashboard-card span {
+  font-size: 35px;
+}
+
+/* CHART */
+.chart-box {
+  margin-top: 25px;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* CHART PLACEHOLDER */
+.chart-placeholder {
+  height: 300px;
+
+  margin-top: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #eef3ff;
+
+  border-radius: 10px;
+
+  font-size: 24px;
+}
+
+/* MOBILE */
+@media(max-width: 992px) {
+
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 600px) {
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    width: 200px;
+  }
+}
