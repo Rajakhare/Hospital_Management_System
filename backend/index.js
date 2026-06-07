@@ -1,5 +1,6 @@
 let express = require("express")
 let mongoose = require("mongoose")
+require('dotenv').config();
 let cors = require("cors")
 const rt = require("./Routes/rt");
 const billingroute = require("./Routes/billingroute");

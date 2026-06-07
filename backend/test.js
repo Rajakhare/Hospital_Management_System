@@ -1,9 +1,11 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 
+console.log('Connecting to:', process.env.MONGODB)
 
-console.log('Connecting to:', process.env.MONGODB) // add this line
-
-mongoose.connect(process.env.MONGODB)
-  .then(() => console.log('✅ MongoDB Connected!'))
+mongoose.connect(process.env.MONGODB, {
+  serverSelectionTimeoutMS: 5000,
+  family: 4
+})
+  .then(() => console.log('✅ Connected!'))
   .catch(err => console.log('❌ Failed:', err.message))
