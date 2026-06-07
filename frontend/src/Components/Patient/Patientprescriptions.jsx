@@ -10,7 +10,7 @@ let Patientprescriptions = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/prescription/getpatientprescriptions/${email}`)
+      .get(`${import.meta.env.VITE_API_URL}/prescription/getpatientprescriptions/${email}`)
       .then((res) => {
         setPrescriptions(res.data.prescriptions || []);
       })

@@ -9,7 +9,7 @@ let Appointments = () => {
 
   const fetchAppointments = () => {
     axios
-      .get(`http://localhost:5000/getappointmentbystatus/${status}`)
+      .get(`${import.meta.env.VITE_API_URL}/getappointmentbystatus/${status}`)
       .then((res) => {
         // handle both cases whether backend returns array or object
         if (Array.isArray(res.data)) {
@@ -33,7 +33,7 @@ let Appointments = () => {
 
   const handleStatusUpdate = (id, newStatus) => {
     axios
-      .put(`http://localhost:5000/updateappointmentstatus/${id}`, { status: newStatus })
+      .put(`${import.meta.env.VITE_API_URL}/updateappointmentstatus/${id}`, { status: newStatus })
       .then(() => fetchAppointments())
       .catch((err) => console.log(err));
   };
@@ -41,7 +41,7 @@ let Appointments = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure?")) {
       axios
-        .delete(`http://localhost:5000/deleteappointment/${id}`)
+        .delete(`${import.meta.env.VITE_API_URL}/deleteappointment/${id}`)
         .then(() => fetchAppointments())
         .catch((err) => console.log(err));
     }

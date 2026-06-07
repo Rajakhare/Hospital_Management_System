@@ -15,7 +15,7 @@ let PatientEditProfile = () => {
 
   useEffect(() => {
     // Fetch doctor profile using email from context
-    axios.get(`http://localhost:5000/getpatientbyemail/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getpatientbyemail/${email}`)
       .then((res) => {
         let pat = res.data;
         setForm({
@@ -35,7 +35,7 @@ let PatientEditProfile = () => {
   };
 
   let handleSubmit = () => {
-    axios.put(`http://localhost:5000/updatepatient/${email}`, form)
+    axios.put(`${import.meta.env.VITE_API_URL}/updatepatient/${email}`, form)
       .then((res) => {
         setMsg(res.data.msg);
       })

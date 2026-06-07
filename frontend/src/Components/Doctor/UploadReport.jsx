@@ -15,7 +15,7 @@ let UploadReport = () => {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/getdoctorpatients/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getdoctorpatients/${email}`)
       .then((res) => {
         setPatients(res.data.patients || []);
       })
@@ -31,7 +31,7 @@ let UploadReport = () => {
       return setMsg("Patient, diagnosis and date are required");
     }
     axios
-      .post(`http://localhost:5000/report/uploadreport/${email}`, form)
+      .post(`${import.meta.env.VITE_API_URL}/report/uploadreport/${email}`, form)
       .then((res) => {
         setMsg(res.data.msg);
         setForm({ patientId: "", diagnosis: "", medicines: "", instructions: "", amount: "", date: "" });

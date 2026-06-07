@@ -25,7 +25,7 @@ let Editdoctor = () => {
   }
 
   let handleSubmit = () => {
-    axios.put(`http://localhost:5000/updatedoctor/${doctor?.doctorId?.email}`, form)
+    axios.put(`${import.meta.env.VITE_API_URL}/updatedoctor/${doctor?.doctorId?.email}`, form)
       .then((res) => {
         setMsg(res.data.msg)
         setTimeout(() => {

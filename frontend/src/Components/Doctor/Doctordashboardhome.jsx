@@ -16,14 +16,14 @@ let Doctordashboardhome = () => {
 
   useEffect(() => {
     // Fetch doctor profile
-    axios.get(`http://localhost:5000/getdoctorbyemail/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getdoctorbyemail/${email}`)
       .then((res) => {
         setDoctorProfile(res.data);
       })
       .catch((err) => console.log(err));
 
     // Fetch doctor appointments
-    axios.get(`http://localhost:5000/getdoctorappointments/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getdoctorappointments/${email}`)
       .then((res) => {
         let appointments = res.data.appointments || [];
 
@@ -50,14 +50,14 @@ let Doctordashboardhome = () => {
       .catch((err) => console.log(err));
 
     // Fetch doctor patients count
-    axios.get(`http://localhost:5000/getdoctorpatients/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getdoctorpatients/${email}`)
       .then((res) => {
         setTotalPatients(res.data.patients?.length || 0);
       })
       .catch((err) => console.log(err));
 
     // Fetch bills for revenue
-    axios.get("http://localhost:5000/billingroute/getallbills")
+    axios.get(`${import.meta.env.VITE_API_URL}/billingroute/getallbills`)
       .then((res) => {
         let bills = res.data.bills || [];
         let paid = bills

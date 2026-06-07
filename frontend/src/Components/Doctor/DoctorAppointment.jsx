@@ -8,7 +8,7 @@ let DoctorAppointments = () => {
 
   const fetchAppointments = () => {
     axios
-      .get(`http://localhost:5000/getdoctorappointments/${email}`)
+      .get(`${import.meta.env.VITE_API_URL}/getdoctorappointments/${email}`)
       .then((res) => {
         setAppointments(res.data.appointments || []);
       })
@@ -24,7 +24,7 @@ let DoctorAppointments = () => {
 
   const handleStatusUpdate = (id, status) => {
     axios
-      .put(`http://localhost:5000/updateappointmentstatus/${id}`, { status })
+      .put(`${import.meta.env.VITE_API_URL}/updateappointmentstatus/${id}`, { status })
       .then(() => fetchAppointments())
       .catch((err) => console.log(err));
   };

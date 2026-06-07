@@ -8,7 +8,7 @@ let ViewPrescriptions = () => {
 
   const fetchPrescriptions = () => {
     axios
-      .get(`http://localhost:5000/prescription/getdoctorprescriptions/${email}`)
+      .get(`${import.meta.env.VITE_API_URL}/prescription/getdoctorprescriptions/${email}`)
       .then((res) => {
         setPrescriptions(res.data.prescriptions || []);
       })
@@ -22,7 +22,7 @@ let ViewPrescriptions = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure?")) {
       axios
-        .delete(`http://localhost:5000/prescription/deleteprescription/${id}`)
+        .delete(`${import.meta.env.VITE_API_URL}/prescription/deleteprescription/${id}`)
         .then(() => fetchPrescriptions())
         .catch((err) => console.log(err));
     }

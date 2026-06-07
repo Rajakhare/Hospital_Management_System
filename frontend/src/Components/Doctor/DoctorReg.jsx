@@ -13,7 +13,7 @@ let DoctorReg=()=> {
     }
 
     let register=()=> {
-        axios.post("http://localhost:5000/createdoctor",data).then((res)=> {
+        axios.post(`${import.meta.env.VITE_API_URL}/createdoctor`,data).then((res)=> {
             if(res.data.msg=="Doctor Registered Successfully")
             {
                 setMsg(res.data.msg)

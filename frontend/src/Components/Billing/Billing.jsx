@@ -10,16 +10,16 @@ let Billing = () => {
   let [msg, setMsg] = useState("")
 
   const fetchBills = () => {
-    axios.get("http://localhost:5000/billingroute/getallbills").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/billingroute/getallbills`).then((res) => {
       setBills(res.data.bills || [])
     }).catch((err) => console.log(err))
   }
 
   useEffect(() => {
-    axios.get("http://localhost:5000/getalldoctors").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/getalldoctors`).then((res) => {
       setDoctors(res.data.doctors || res.data)
     })
-    axios.get("http://localhost:5000/getallpatients").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/getallpatients`).then((res) => {
       setPatients(res.data.patients || res.data)
     })
     fetchBills()
@@ -30,7 +30,7 @@ let Billing = () => {
   }
 
   let bill = () => {
-    axios.post("http://localhost:5000/billingroute/createbill", data).then((res) => {
+    axios.post(`${import.meta.env.VITE_API_URL}/billingroute/createbill`, data).then((res) => {
       setMsg(res.data.msg)
       setData({ patientId: "", doctorId: "", noOfAppointments: "" })
       fetchBills()
@@ -40,14 +40,14 @@ let Billing = () => {
   }
 
   let handleStatusUpdate = (id, status) => {
-    axios.put(`http://localhost:5000/billingroute/updatebillstatus/${id}`, { status })
+    axios.put(`${import.meta.env.VITE_API_URL}/billingroute/updatebillstatus/${id}`, { status })
       .then(() => fetchBills())
       .catch((err) => console.log(err))
   }
 
   let handleDelete = (id) => {
     if (window.confirm("Are you sure?")) {
-      axios.delete(`http://localhost:5000/billingroute/deletebill/${id}`)
+      axios.delete(`${import.meta.env.VITE_API_URL}/billingroute/deletebill/${id}`)
         .then(() => fetchBills())
         .catch((err) => console.log(err))
     }

@@ -7,7 +7,7 @@ let Scheduleappointment = () => {
     let [msg,setMsg] = useState("")
 
     useEffect(()=> {
-        axios.get("http://localhost:5000/getappointmentbystatus/pending").then((res)=> {
+        axios.get(`${import.meta.env.VITE_API_URL}/getappointmentbystatus/pending`).then((res)=> {
           setData(res.data.appointments || [])
         }).catch((err)=> {
             setMsg(res.data.msg)

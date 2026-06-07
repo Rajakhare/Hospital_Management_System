@@ -1,6 +1,7 @@
-import "../Doctor/Doctordashboardhome.css";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "../Doctor/doctordashboardhome.css"
 
 let PatientDashboardHome = () => {
 
@@ -17,14 +18,14 @@ let PatientDashboardHome = () => {
   useEffect(() => {
 
     // Patient Profile
-    axios.get(`http://localhost:5000/getpatientbyemail/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getpatientbyemail/${email}`)
       .then((res) => {
         setPatientProfile(res.data);
       })
       .catch((err) => console.log(err));
 
     // Patient Appointments
-    axios.get(`http://localhost:5000/getpatientappointments/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getpatientappointments/${email}`)
       .then((res) => {
 
         let data = res.data.appointments || [];
@@ -68,14 +69,14 @@ let PatientDashboardHome = () => {
       .catch((err) => console.log(err));
 
     // Prescriptions
-    axios.get(`http://localhost:5000/getprescriptionbypatient/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getprescriptionbypatient/${email}`)
       .then((res) => {
         setPrescriptions(res.data.prescriptions || []);
       })
       .catch((err) => console.log(err));
 
     // Bills
-    axios.get(`http://localhost:5000/billingroute/getpatientbills/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/billingroute/getpatientbills/${email}`)
       .then((res) => {
 
         let bills = res.data.bills || [];

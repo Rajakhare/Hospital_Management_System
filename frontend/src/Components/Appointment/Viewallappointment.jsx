@@ -7,7 +7,7 @@ let ViewAllAppointments = () => {
 
   const fetchAppointments = () => {
     axios
-      .get("http://localhost:5000/getallappointments")
+      .get(`${import.meta.env.VITE_API_URL}/getallappointments`)
       .then((res) => {
         console.log(res.data)
         setData(res.data.appointments);
@@ -26,7 +26,7 @@ let ViewAllAppointments = () => {
 
   const handleStatusUpdate = (id, status) => {
     axios
-      .put(`http://localhost:5000/updateappointmentstatus/${id}`, { status })
+      .put(`${import.meta.env.VITE_API_URL}/updateappointmentstatus/${id}`, { status })
       .then(() => fetchAppointments())
       .catch((err) => console.log(err));
   };
@@ -34,7 +34,7 @@ let ViewAllAppointments = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this appointment?")) {
       axios
-        .delete(`http://localhost:5000/deleteappointment/${id}`)
+        .delete(`${import.meta.env.VITE_API_URL}/deleteappointment/${id}`)
         .then(() => fetchAppointments())
         .catch((err) => console.log(err));
     }

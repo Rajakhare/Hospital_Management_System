@@ -10,7 +10,7 @@ let Viewpatient = ()=> {
     let {email} = useParams()
 
     useEffect(()=> {
-        axios.get(`http://localhost:5000/getallpatients`).then((res)=> {
+        axios.get(`${import.meta.env.VITE_API_URL}/getallpatients`).then((res)=> {
             setPatients(res.data)
         }).catch((err)=> {
             console.log(err)
@@ -19,7 +19,7 @@ let Viewpatient = ()=> {
     },[f])
 
     let handleDelete = (email)=> {
-      axios.delete(`http://localhost:5000/deletepatient/${email}`).then((res)=> {
+      axios.delete(`${import.meta.env.VITE_API_URL}/deletepatient/${email}`).then((res)=> {
         alert(res.data.msg)
         setF(!f)
       }).catch((err)=> {

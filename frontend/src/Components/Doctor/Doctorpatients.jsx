@@ -8,7 +8,7 @@ let DoctorPatients = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/getdoctorpatients/${email}`)
+      .get(`${import.meta.env.VITE_API_URL}/getdoctorpatients/${email}`)
       .then((res) => {
         setPatients(res.data.patients || []);
       })

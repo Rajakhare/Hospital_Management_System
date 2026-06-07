@@ -8,7 +8,7 @@ let Scheduledappointment = () => {
 
   const fetchAppointments = () => {
     axios
-      .get(`http://localhost:5000/getpatientappointments/${email}`)
+      .get(`${import.meta.env.VITE_API_URL}/getpatientappointments/${email}`)
       .then((res) => {
         let all = res.data.appointments || [];
         // Only show pending appointments
@@ -29,7 +29,7 @@ let Scheduledappointment = () => {
   const handleCancel = (id) => {
     if (window.confirm("Are you sure you want to cancel?")) {
       axios
-        .put(`http://localhost:5000/updateappointmentstatus/${id}`, { status: "cancelled" })
+        .put(`${import.meta.env.VITE_API_URL}/updateappointmentstatus/${id}`, { status: "cancelled" })
         .then(() => fetchAppointments())
         .catch((err) => console.log(err));
     }

@@ -16,19 +16,19 @@ let Bookappointment = () => {
   let [msg, setMsg] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/getalldoctors").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/getalldoctors`).then((res) => {
       setDoctor(res.data.doctors || res.data);
     });
 
     if(role === "admin") {
-      axios.get("http://localhost:5000/getallpatients").then((res) => {
+      axios.get(`${import.meta.env.VITE_API_URL}/getallpatients`).then((res) => {
       setPatient(res.data.patients || res.data);
     });
     }
 
     // If patient get their own patientId automatically
     if (role === "patient") {
-      axios.get(`http://localhost:5000/getpatientbyemail/${email}`).then((res) => {
+      axios.get(`${import.meta.env.VITE_API_URL}/getpatientbyemail/${email}`).then((res) => {
         setData((prev) => ({ ...prev, patientId: res.data.patientId }));
       });
     }
@@ -49,7 +49,7 @@ let Bookappointment = () => {
     console.log("data being sent", data);
 
     axios
-      .post("http://localhost:5000/bookappointment", data)
+      .post(`${import.meta.env.VITE_API_URL}/bookappointment`, data)
       .then((res) => {
         setMsg(res.data.msg);
         setData((prev) => ({

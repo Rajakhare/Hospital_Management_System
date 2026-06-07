@@ -10,7 +10,7 @@ let PatientReports = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/report/getpatientreports/${email}`)
+      .get(`${import.meta.env.VITE_API_URL}/report/getpatientreports/${email}`)
       .then((res) => {
         setReports(res.data.reports || []);
       })

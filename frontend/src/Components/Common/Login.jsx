@@ -17,7 +17,7 @@ let Login=()=> {
     }
 
     let login=()=> {
-        axios.post("http://localhost:5000/login",data).then((res)=> {
+        axios.post(`${import.meta.env.VITE_API_URL}/login`,data).then((res)=> {
             // console.log(res.data.msg)
             if(!res.data.msg) {
                 localStorage.setItem("token", res.data.token)

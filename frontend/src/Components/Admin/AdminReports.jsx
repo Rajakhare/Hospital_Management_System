@@ -5,7 +5,7 @@ let AdminReports = () => {
   let [reports, setReports] = useState([]);
 
   const fetchReports = () => {
-    axios.get("http://localhost:5000/report/getallreports")
+    axios.get(`${import.meta.env.VITE_API_URL}/report/getallreports`)
       .then((res) => setReports(res.data.reports || []))
       .catch((err) => console.log(err));
   };
@@ -16,7 +16,7 @@ let AdminReports = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure?")) {
-      axios.delete(`http://localhost:5000/report/deletereport/${id}`)
+      axios.delete(`${import.meta.env.VITE_API_URL}/report/deletereport/${id}`)
         .then(() => fetchReports())
         .catch((err) => console.log(err));
     }

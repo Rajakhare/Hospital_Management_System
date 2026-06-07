@@ -8,7 +8,7 @@ let Cancelappointment = () => {
 
 
     useEffect(()=> {
-        axios.get(`http://localhost:5000/getappointmentbystatus/cancelled`).then((res)=> {
+        axios.get(`${import.meta.env.VITE_API_URL}/getappointmentbystatus/cancelled`).then((res)=> {
           setData(res.data.appointments || [])
           console.log("cancelled appointments", res.data.appointments)
         }).catch((err)=> {

@@ -16,7 +16,7 @@ let PatientReg=()=> {
     }
 
     let register=()=> {
-        axios.post("http://localhost:5000/createpatient",data).then((res)=> {
+        axios.post(`${import.meta.env.VITE_API_URL}/createpatient`,data).then((res)=> {
             if(res.data.msg=="Patient Registered Successfully") {
                 navigate("/")
             }

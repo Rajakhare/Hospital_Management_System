@@ -15,7 +15,7 @@ let AddPrescription = () => {
 
   useEffect(() => {
     // Get only doctor's patients
-    axios.get(`http://localhost:5000/getdoctorpatients/${email}`)
+    axios.get(`${import.meta.env.VITE_API_URL}/getdoctorpatients/${email}`)
       .then((res) => {
         setPatients(res.data.patients || []);
       })
@@ -31,7 +31,7 @@ let AddPrescription = () => {
       return setMsg("Patient, medicines and date are required");
     }
     axios
-      .post(`http://localhost:5000/prescription/addprescription/${email}`, form)
+      .post(`${import.meta.env.VITE_API_URL}/prescription/addprescription/${email}`, form)
       .then((res) => {
         setMsg(res.data.msg);
         setForm({ patientId: "", diagnosis: "", medicines: "", instructions: "", date: "" });

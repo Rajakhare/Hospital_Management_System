@@ -8,7 +8,7 @@ let PatientBills = ({ status }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/billingroute/getpatientbills/${email}`)
+      .get(`${import.meta.env.VITE_API_URL}/billingroute/getpatientbills/${email}`)
       .then((res) => {
         let all = res.data.bills || [];
         if (status === "all") {

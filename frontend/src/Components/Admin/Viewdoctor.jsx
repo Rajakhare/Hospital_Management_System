@@ -11,7 +11,7 @@ let Viewdoctor = ()=> {
     let navigate = useNavigate()
 
     useEffect(()=> {
-        axios.get("http://localhost:5000/getalldoctors").then((res)=> {
+        axios.get(`${import.meta.env.VITE_API_URL}/getalldoctors`).then((res)=> {
             setDoctors(res.data)
         }).catch((err)=> {
             console.log(err)
@@ -20,7 +20,7 @@ let Viewdoctor = ()=> {
     },[f])
 
     let handleDelete = (email)=> {
-        axios.delete(`http://localhost:5000/deletedoctor/${email}`).then((res)=> {
+        axios.delete(`${import.meta.env.VITE_API_URL}/deletedoctor/${email}`).then((res)=> {
             alert(res.data.msg)
             setF(!f)
         }).catch((err)=> {

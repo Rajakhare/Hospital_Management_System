@@ -32,25 +32,25 @@ import Scheduleappointment from "../Appointment/Scheduleappointment"
 
 //   useEffect(() => {
 //     // Fetch doctors count
-//     axios.get("http://localhost:5000/getalldoctors").then((res) => {
+//     axios.get("${import.meta.env.VITE_API_URL}/getalldoctors").then((res) => {
 //       let data = res.data.doctors || res.data;
 //       setCounts((prev) => ({ ...prev, doctors: data.length }));
 //     });
 
 //     // Fetch patients count
-//     axios.get("http://localhost:5000/getallpatients").then((res) => {
+//     axios.get("${import.meta.env.VITE_API_URL}/getallpatients").then((res) => {
 //       let data = res.data.patients || res.data;
 //       setCounts((prev) => ({ ...prev, patients: data.length }));
 //     });
 
 //     // Fetch appointments count
-//     axios.get("http://localhost:5000/getallappointments").then((res) => {
+//     axios.get("${import.meta.env.VITE_API_URL}/getallappointments").then((res) => {
 //       let data = res.data.appointments || res.data;
 //       setCounts((prev) => ({ ...prev, appointments: data.length }));
 //     });
 
 //     // Fetch bills count
-//     axios.get("http://localhost:5000/billingroute/getallbills").then((res) => {
+//     axios.get("${import.meta.env.VITE_API_URL}/billingroute/getallbills").then((res) => {
 //       let data = res.data.bills || res.data;
 //       setCounts((prev) => ({ ...prev, bills: data.length }));
 //     });
