@@ -19,6 +19,7 @@ import Billing from "./Components/Billing/Billing"
 import Editdoctor from "./Components/Admin/Editdoctor"
 import Admindash from "./Components/Admin/Admindash"
 import AdminReports from "./Components/Admin/AdminReports"
+import AdminReg from "./Components/Admin/AdminReg"
 
 let App=()=> {
     let [state,setState] = useState({"token":"", "role":"", "email":"", "name":""})
@@ -32,6 +33,7 @@ let App=()=> {
     <Ct.Provider value={{state, updState}}>
     <Routes>
         <Route path="/" element={<Login/>}/>
+        <Route path="/adminregister" element={<AdminReg/>}/>
         <Route path="/admindashboard" element={<Admindashboard/>}>
             <Route path="viewdoctor" element={<Viewdoctor/>}/>
             <Route path="editdoctor" element={<Editdoctor/>}/>

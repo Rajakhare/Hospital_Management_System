@@ -41,4 +41,14 @@ let login = async(req,res)=> {
         res.json({"msg":"Error In Login Process."})
     }
 }
-module.exports = {createAdmin, login}
+
+let checkAdmin = async(req, res) => {
+    try {
+        let adminExists = await adminModel.findOne({"role": "admin"})
+        res.json({"adminExists": adminExists ? true : false})
+    }
+    catch(err) {
+        res.json({"adminExists": false})
+    }
+}
+module.exports = {createAdmin, login,checkAdmin}
